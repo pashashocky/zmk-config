@@ -100,3 +100,11 @@ MIRYOKU_X(FUN,        "Fun")
 
 #define MIRYOKU_LAYERMAPPING_NUM_QWERTY MIRYOKU_MAPPING
 #define MIRYOKU_LAYERMAPPING_SYM_QWERTY MIRYOKU_MAPPING
+
+
+#define MIRYOKU_LAYER_TAP \
+&kp Q,             &kp W,             &kp E,             &kp R,             &kp T,             &kp Y,             &kp U,             &kp I,             &kp O,             &kp SQT,           \
+&kp A,             &kp S,             &kp D,             &kp F,             &kp G,             &kp H,             &kp J,             &kp K,             &kp L,             &kp SEMI,          \
+&kp Z,             &kp X,             &kp C,             &kp V,             &kp B,             &kp N,             &kp M,             &kp COMMA,         &kp DOT,           &kp SLASH,         \
+U_NP,              U_NP,              &kp DEL,           &kp BSPC,          &kp TAB,           &kp RET,           &kp SPACE,         &kp ESC,           U_NP,              U_NP
+
