@@ -1,20 +1,18 @@
-#define MIRYOKU_ALPHAS_QWERTY // main as qwerty layer
-#define MIRYOKU_EXTRA_COLEMAKDH  // extra colemakdh layer
 #define MIRYOKU_KLUDGE_MOUSEKEYSPR  // enable mouse
 
 // layers remapping
-
+ 
 #define MIRYOKU_LAYER_BASE \
-&kp Q,             &kp W,             &kp E,               &kp R,              &kp T,                      &kp Y,                      &kp U,                      &kp I,             &kp O,             U_MT(DQT, SQT),             \
-U_MT(LCTRL, A),    U_MT(LALT, S),     U_MT(LGUI, D),       U_MT(LSHFT, F),     U_MT(LC(LA(LS(LGUI))), G),  U_MT(LC(LA(LS(LGUI))), H),  U_MT(LSHFT, J),             U_MT(LGUI, K),     U_MT(LALT, L),     U_MT(RCTRL, SEMI),   \
-U_LT(U_BUTTON, Z), U_MT(RALT, X),     &kp C,               &kp V,              &kp B,                      &kp N,                      &kp M,                      &kp COMMA,         U_MT(RALT, DOT),   U_MT(LSHFT, SLASH),\
-U_NP,              U_NP,              U_LT(U_MEDIA, DEL),  U_LT(U_NAV, BSPC),  U_LT(U_MOUSE, TAB),         U_LT(U_SYM_QWERTY, RET),    U_LT(U_NUM_QWERTY, SPACE),  U_LT(U_FUN, ESC),  U_NP,              U_NP
-
-#define MIRYOKU_LAYER_EXTRA \
 &kp Q,             &kp W,             &kp F,               &kp P,              &kp B,                      &kp J,                      &kp L,               &kp U,             &kp Y,             U_MT(DQT, SQT),           \
 U_MT(LCTRL, A),    U_MT(LALT, R),     U_MT(LGUI, S),       U_MT(LSHFT, T),     U_MT(LC(LA(LS(LGUI))), G),  U_MT(LC(LA(LS(LGUI))), M),  U_MT(LSHFT, N),      U_MT(LGUI, E),     U_MT(LALT, I),     U_MT(RCTRL, O),   \
 U_LT(U_BUTTON, Z), U_MT(RALT, X),     &kp C,               &kp D,              &kp V,                      &kp K,                      &kp H,               &kp COMMA,         U_MT(RALT, DOT),   U_MT(LSHFT, SLASH),\
 U_NP,              U_NP,              U_LT(U_MEDIA, DEL),  U_LT(U_NAV, BSPC),  U_LT(U_MOUSE, TAB),         U_LT(U_SYM, RET),           U_LT(U_NUM, SPACE),  U_LT(U_FUN, ESC),  U_NP,              U_NP
+
+#define MIRYOKU_LAYER_EXTRA \
+&kp Q,             &kp W,             &kp E,               &kp R,              &kp T,                      &kp Y,                      &kp U,                      &kp I,             &kp O,             U_MT(DQT, SQT),             \
+U_MT(LCTRL, A),    U_MT(LALT, S),     U_MT(LGUI, D),       U_MT(LSHFT, F),     U_MT(LC(LA(LS(LGUI))), G),  U_MT(LC(LA(LS(LGUI))), H),  U_MT(LSHFT, J),             U_MT(LGUI, K),     U_MT(LALT, L),     U_MT(RCTRL, SEMI),   \
+U_LT(U_BUTTON, Z), U_MT(RALT, X),     &kp C,               &kp V,              &kp B,                      &kp N,                      &kp M,                      &kp COMMA,         U_MT(RALT, DOT),   U_MT(LSHFT, SLASH),\
+U_NP,              U_NP,              U_LT(U_MEDIA, DEL),  U_LT(U_NAV, BSPC),  U_LT(U_MOUSE, TAB),         U_LT(U_SYM_QWERTY, RET),    U_LT(U_NUM_QWERTY, SPACE),  U_LT(U_FUN, ESC),  U_NP,              U_NP
 
 
 #define MIRYOKU_LAYER_MEDIA \
