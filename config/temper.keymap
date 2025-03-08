@@ -1,8 +1,12 @@
-// Copyright 2024 Manna Harbour
-// https://github.com/manna-harbour/miryoku
+#define CONFIG_WIRELESS
+#define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)                   \
+    ZMK_LAYER(                                                                 \
+        name,                                                                  \
+                 LT RT                                                         \
+                 LM RM                                                         \
+                 LB RB                                                         \
+        &kp LGUI LH RH &smart_mouse                                            \
+    )
 
-#include <dt-bindings/zmk/ext_power.h>
-
-#include "../miryoku/custom_config.h"
-#include "../miryoku/mapping/36/minidox.h"
-#include "../miryoku/miryoku.dtsi"
+#include "zmk-helpers/key-labels/36.h"
+#include "base.dtsi"
