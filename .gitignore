@@ -1,9 +1,8 @@
-.zmk/
 .build
 .direnv
 .west
-modules
-firmware
-zmk
 draw/base.yaml
+firmware
+modules
 zephyr
+zmk
