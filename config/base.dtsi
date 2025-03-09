@@ -121,7 +121,7 @@ ZMK_ADAPTIVE_KEY(
     };)
 &caps_word { // Mods deactivate caps-word, requires PR #1451. [TODO: rebase]
   /delete-property/ ignore-modifiers;
-  continue-list = <UNDERSCORE MINUS>;
+  continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
 };
 
 // Tap: num-word | double-tap: sticky num-layer | Hold: num-layer.
