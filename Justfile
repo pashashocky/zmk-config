@@ -80,6 +80,15 @@ clean-all: clean
 clean-nix:
     nix-collect-garbage --delete-old
 
+cp expr *west_args: _parse_combos
+    #!/usr/bin/env bash
+    set -euo pipefail
+    targets=$(just _parse_targets {{ expr }})
+    echo "$targets" | while IFS=, read -r board shield snippet; do
+        artifact="${shield:+${shield// /+}-}${board}"
+        cp "{{ out }}/$artifact.uf2" /Volumes/NICENANO
+    done
+
 # parse & plot keymap
 draw:
     #!/usr/bin/env bash
