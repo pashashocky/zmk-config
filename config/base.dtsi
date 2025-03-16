@@ -55,8 +55,8 @@
 
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS)                                 \
   ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>; flavor = "balanced";            \
-               tapping-term-ms = <280>; quick-tap-ms = <QUICK_TAP_MS>;         \
-               require-prior-idle-ms = <150>; hold-trigger-on-release;         \
+               tapping-term-ms = <150>; quick-tap-ms = <QUICK_TAP_MS>;         \
+               require-prior-idle-ms = <105>; hold-trigger-on-release;         \
                hold-trigger-key-positions = <TRIGGER_POS>;)
 
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
@@ -213,7 +213,7 @@ ZMK_MACRO(ARROW, bindings =
 
 /* Keymap */
 
-ZMK_CONDITIONAL_LAYER(sys, FN NUM, SYS) // FN + NUM --> SYS.
+ZMK_CONDITIONAL_LAYER(sys, FN NAV, SYS) // FN + NAV --> SYS.
 
 #ifndef ZMK_BASE_LAYER
   #define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)                 \
@@ -224,24 +224,24 @@ ZMK_BASE_LAYER(Base,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
     &kp Q         &kp W         &kp F         &kp P         &kp B       ,   &kp J         &kp L         &kp U         &kp Y         &kp SQT     ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &hml LCTRL A  &hml LALT R   &hml LGUI S   &hml LSHFT T  &hml HYPER G,   &hmr HYPER M  &hmr RSHFT N  &hmr RGUI E   &hmr RALT I   &hmr RCTRL O ,
+    &hml LCTRL A  &hml LALT R   &hml LGUI S   &hml LSHFT T  &hml HYPER G,   &hmr HYPER M  &hmr RSHFT N  &hmr RGUI E   &hmr LALT I   &hmr RCTRL O ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &kp Z         &kp X         &kp C         &kp D         &kp V       ,   &kp K         &kp H         &comma_morph  &dot_morph    &qexcl      ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
-                                &kp TAB       &lt NAV BSPC  MAGIC_SHIFT ,   &lt NAV RET   &lt_spc FN 0  SMART_NUM
+                                &kp TAB       &lt NAV BSPC  MAGIC_SHIFT ,   &lt FN RET   &lt_spc NAV 0  SMART_NUM
 //                            ╰─────────────┴─────────────┴─────────────╯ ╰─────────────┴─────────────┴─────────────╯
 )
 
 ZMK_BASE_LAYER(Nav,
-//╭─────────────┬─────────────┬───────────────┬─────────────────┬────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &kp ESC       ___           &kp LBRC        &kp RBRC          &kp MINUS  ,   ___           NAV_BSPC      ___           NAV_DEL       ___         ,
-//├─────────────┼─────────────┼───────────────┼─────────────────┼────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &sk LCTRL     &sk LALT      &hml LGUI LPAR  &hml LSHFT RPAR   &sk HYPER  ,   ___           NAV_LEFT      NAV_DOWN      NAV_UP        NAV_RIGHT   ,
-//├─────────────┼─────────────┼───────────────┼─────────────────┼────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp GRAVE     &kp UNDER     &kp LBKT        &kp RBKT          &kp TILDE  ,   &kp INS       &kp HOME      &kp PG_DN     &kp PG_UP     &kp END     ,
-//╰─────────────┼─────────────┴───────────────┼─────────────────┼────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
-                                ___             ___               ___        ,   CANCEL        &kp TAB       ___
-//                            ╰───────────────┴─────────────────┴────────────╯ ╰─────────────┴─────────────┴─────────────╯
+//╭─────────────────┬─────────────────┬───────────────┬─────────────────┬─────────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+    &kp ESC           &ARROW            &kp LBRC        &kp RBRC          &kp PLUS        ,   ___           NAV_BSPC      ___           NAV_DEL       ___         ,
+//├─────────────────┼─────────────────┼───────────────┼─────────────────┼─────────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    &hml LCTRL FSLH   &hml LALT COLON   &hml LGUI LPAR  &hml LSHFT RPAR   &hml HYPER EQUAL,   ___           NAV_LEFT      NAV_DOWN      NAV_UP        NAV_RIGHT   ,
+//├─────────────────┼─────────────────┼───────────────┼─────────────────┼─────────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+    &kp GRAVE         &kp UNDER         &kp LBKT        &kp RBKT          &kp MINUS       ,   &kp INS       &kp HOME      &kp PG_DN     &kp PG_UP     &kp END     ,
+//╰─────────────────┼─────────────────┴───────────────┼─────────────────┼─────────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
+                                        ___             ___               ___             ,   CANCEL        &kp TAB       ___
+//                                    ╰───────────────┴─────────────────┴─────────────────╯ ╰─────────────┴─────────────┴─────────────╯
 )
 
 ZMK_BASE_LAYER(Fn,
