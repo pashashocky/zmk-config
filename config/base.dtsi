@@ -186,18 +186,14 @@ ZMK_MACRO(leader_sft, bindings = <&sk LSHFT &leader>;)
 
 // Fat arrow padded with spaces: ' => '
 ZMK_MACRO(FAT_ARROW, bindings =
-    <&kp SPACE>,
     <&kp EQUAL>,
-    <&kp GT>,
-    <&kp SPACE>;
+    <&kp GT>;
 )
 
 // Thin arrow padded with spaces: ' -> '
 ZMK_MACRO(ARROW, bindings =
-    <&kp SPACE >,
     <&kp MINUS>,
-    <&kp GT>,
-    <&kp SPACE>;
+    <&kp GT>;
 )
 
 // Misc aliases. [TODO: clean up]
@@ -240,7 +236,7 @@ ZMK_BASE_LAYER(Nav,
 //├─────────────────┼─────────────────┼───────────────┼─────────────────┼─────────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &kp GRAVE         &kp UNDER         &kp LBKT        &kp RBKT          &kp MINUS       ,   &kp INS       &kp HOME      &kp PG_DN     &kp PG_UP     &kp END     ,
 //╰─────────────────┼─────────────────┴───────────────┼─────────────────┼─────────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
-                                        ___             ___               ___             ,   CANCEL        &kp TAB       ___
+                                        ___             ___               &kp MINUS       ,   CANCEL        &kp TAB       ___
 //                                    ╰───────────────┴─────────────────┴─────────────────╯ ╰─────────────┴─────────────┴─────────────╯
 )
 
