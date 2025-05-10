@@ -169,9 +169,9 @@ SIMPLE_MORPH(rpar_gt, SFT, &kp RPAR, &kp GT)
 // Tap: space | Shift + tap: dot -> space -> sticky shift | Hold: nav layer.
 ZMK_HOLD_TAP(lt_spc, bindings = <&mo>, <&spc_morph>; flavor = "balanced";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
-SIMPLE_MORPH(spc_morph, SFT, &kp SPACE, &dot_spc)
-ZMK_MACRO(dot_spc, bindings = <&kp DOT &kp SPACE &sk LSHFT>; wait-ms = <0>;
-          tap-ms = <5>;)
+SIMPLE_MORPH(spc_morph, SFT, &kp SPACE, &kp LS(SPACE))
+/* ZMK_MACRO(dot_spc, bindings = <&kp DOT &kp SPACE &sk LSHFT>; wait-ms = <0>; */
+/*           tap-ms = <5>;) */
 
 // Tap: backspace | Lshft + tap: delete | Rshft + tap: shift-delete.
 ZMK_MOD_MORPH(bs_del, bindings = <&kp BSPC>, <&kp DEL>;
@@ -230,7 +230,7 @@ ZMK_BASE_LAYER(Base,
 
 ZMK_BASE_LAYER(Nav,
 //╭─────────────────┬─────────────────┬───────────────┬─────────────────┬─────────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-    &kp ESC           &ARROW            &kp LBRC        &kp RBRC          &kp PLUS        ,   ___           NAV_BSPC      ___           NAV_DEL       ___         ,
+    &kp ESC           &ARROW            &kp LBRC        &kp RBRC          &kp PLUS        ,   ___           NAV_BSPC      &sk LSHFT     NAV_DEL       ___         ,
 //├─────────────────┼─────────────────┼───────────────┼─────────────────┼─────────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &hml LCTRL FSLH   &hml LALT COLON   &hml LGUI LPAR  &hml LSHFT RPAR   &hml HYPER EQUAL,   ___           NAV_LEFT      NAV_DOWN      NAV_UP        NAV_RIGHT   ,
 //├─────────────────┼─────────────────┼───────────────┼─────────────────┼─────────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
